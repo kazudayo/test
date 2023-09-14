@@ -1,0 +1,31 @@
+name: copy target.yml from Nuxt-test
+on:
+  repository_dispatch:
+    types: [target-updated]
+jobs:
+  copy-target:
+    name: copy target.yml
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: clone Nuxt-test
+        uses: actions/checkout@v2
+        with:
+          repository: kazudayo/Nuxt-test
+          path: Nuxt-test
+          token: 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
+      - name: copy target.yml
+        run: cp Nuxt-test/target.yml target.yml
+      - name: clean Nuxt-test
+        run: rm -rf Nuxt-test
+      - name: create PR
+        uses: peter-evans/create-pull-request@v3
+        with:
+            token: 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
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          commit-message: 'copy target.yml'
+          branch: copy_target
+          branch-suffix: timestamp
+          delete-branch: true
+          title: 'updated target.yml'
