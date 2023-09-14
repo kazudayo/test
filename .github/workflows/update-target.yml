@@ -17,8 +17,8 @@ jobs:
           token: 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
       - name: copy target.yml
         run: cp Nuxt-test/target.yml target.yml
-      - name: clean Nuxt-test
-        run: rm --rf Nuxt-test
+    #   - name: clean Nuxt-test
+    #     run: rm --rf Nuxt-test
       - name: create PR
         uses: peter-evans/create-pull-request@v3
         with:
