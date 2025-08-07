@@ -1,42 +1,28 @@
 <!doctype html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Manual Chatbot Demo</title>
 </head>
 <body>
   <h1>Manual Chatbot Demo</h1>
   <p>右下の吹き出しから質問できます。</p>
 
-  <!-- Dify の設定は body 終了直前に置くのが安全です -->
- <script>
- window.difyChatbotConfig = {
-  token: 'ZrP8R6g7tJlS12TD',
-  baseUrl: 'http://athletic-symphony-france-translator.trycloudflare.com',
-  systemVariables: {
-    // user_id: 'YOU CAN DEFINE USER ID HERE',
-    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
-  },
-  userVariables: {
-    // avatar_url: 'YOU CAN DEFINE USER AVATAR URL HERE',
-    // name: 'YOU CAN DEFINE USER NAME HERE',
-  },
- }
-</script>
-<script
- src="http://athletic-symphony-france-translator.trycloudflare.com/embed.min.js"
- id="ZrP8R6g7tJlS12TD"
- defer>
-</script>
-<style>
-  #dify-chatbot-bubble-button {
-    background-color: #1C64F2 !important;
-  }
-  #dify-chatbot-bubble-window {
-    width: 24rem !important;
-    height: 40rem !important;
-  }
-</style>
+  <script>
+    window.difyChatbotConfig = {
+      token: 'ZrP8R6g7tJlS12TD',
+      baseUrl: 'https://athletic-symphony-france-translator.trycloudflare.com'
+    };
+  </script>
+  <script
+    src="https://athletic-symphony-france-translator.trycloudflare.com/embed.min.js"
+    id="ZrP8R6g7tJlS12TD"
+    defer></script>
+
+  <style>
+    #dify-chatbot-bubble-button { background-color:#1C64F2!important; }
+    #dify-chatbot-bubble-window { width:24rem!important; height:40rem!important; }
+  </style>
 </body>
 </html>
